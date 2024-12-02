@@ -319,7 +319,7 @@ function processFoundData(orderDetails) {
     const sotienBangchu = doctien.doc(sotienConthieu);
 
     // Cập nhật giá trị sotienBangchu vào orderDetails
-    orderDetails.sotienConthieu = sotienConthieu.toLocaleString('vi-VN');
+    orderDetails.sotienConthieu = sotienConthieu.toLocaleString('vi-VN', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
     orderDetails.sotienBangchu = sotienBangchu;
 
     // Cập nhật DOM
