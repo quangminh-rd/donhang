@@ -321,11 +321,6 @@ function processFoundData(orderDetails) {
     // Cập nhật giá trị sotienBangchu vào orderDetails
     orderDetails.sotienConthieu = sotienConthieu.toLocaleString('vi-VN', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
     orderDetails.sotienBangchu = sotienBangchu;
-    orderDetails.cong = formatNumber(cong);
-    orderDetails.giatriChietkhau = formatNumber(giatriChietkhau);
-    orderDetails.phiVanchuyenlapdat = formatNumber(phiVanchuyenlapdat);
-    orderDetails.thueGTGT = formatNumber(thueGTGT);
-    orderDetails.tamUng = formatNumber(tamUng);
 
     // Cập nhật DOM
     Object.keys(orderDetails).forEach((key) => {
