@@ -118,32 +118,32 @@ document.getElementById('export-excel').addEventListener('click', async function
             worksheet.getCell('H8').value = 'CSKH:';
             worksheet.getCell('J8').value = '1900 0282';
         }
-        worksheet.getCell('H512').value = orderDetails.tongSobo || '';
-        worksheet.getCell('L512').value = formatNumber(orderDetails.cong || '');
+        worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(orderDetails.tongSobo) : 0;
+        worksheet.getCell('L512').value = orderDetails.cong ? parseFloat(orderDetails.cong) : 0;
         worksheet.getCell('H513').value = orderDetails.mucChietkhau || '';
-        worksheet.getCell('L513').value = formatNumber(orderDetails.giatriChietkhau || '');
-        worksheet.getCell('L514').value = formatNumber(orderDetails.phiVanchuyenlapdat || '');
+        worksheet.getCell('L513').value = orderDetails.giatriChietkhau ? parseFloat(orderDetails.giatriChietkhau) : 0;
+        worksheet.getCell('L514').value = orderDetails.phiVanchuyenlapdat ? parseFloat(orderDetails.phiVanchuyenlapdat) : 0;
         worksheet.getCell('H515').value = `${orderDetails.mucthueGTGT || ''}%`;
-        worksheet.getCell('L515').value = formatNumber(orderDetails.thueGTGT || '');
-        worksheet.getCell('L516').value = formatNumber(orderDetails.tamUng || '');
-        worksheet.getCell('L517').value = formatNumber(orderDetails.sotienConthieu || '');
+        worksheet.getCell('L515').value = orderDetails.thueGTGT ? parseFloat(orderDetails.thueGTGT) : 0;
+        worksheet.getCell('L516').value = orderDetails.tamUng ? parseFloat(orderDetails.tamUng) : 0;
+        worksheet.getCell('L517').value = orderDetails.sotienConthieu ? parseFloat(orderDetails.sotienConthieu) : 0;
         worksheet.getCell('A518').value = `Bằng chữ: ${orderDetails.sotienBangchu || ''}`;
         // Điền chi tiết sản phẩm vào Excel
         let startRow = 12; // Ví dụ: bắt đầu từ dòng 12
         orderItems.forEach((item, index) => {
             const row = worksheet.getRow(startRow + index);
-            row.getCell(1).value = item.sttTrongdon;
+            row.getCell(1).value = parseFloat(item.sttTrongdon);
             row.getCell(2).value = item.vitriLapdat;
             row.getCell(3).value = item.maSanphamid;
             row.getCell(4).value = item.diengiai;
-            row.getCell(5).value = formatNumber(item.chieuRong);
-            row.getCell(6).value = formatNumber(item.chieuCao);
+            row.getCell(5).value = parseFloat(item.chieuRong);
+            row.getCell(6).value = parseFloat(item.chieuCao);
             row.getCell(7).value = item.dienTich;
-            row.getCell(8).value = item.soLuong;
+            row.getCell(8).value = parseFloat(item.soLuong);
             row.getCell(9).value = item.dvt;
-            row.getCell(10).value = item.khoiLuong;
-            row.getCell(11).value = formatNumber(item.dongia);
-            row.getCell(12).value = formatNumber(item.giaban);
+            row.getCell(10).value = parseFloat(item.khoiLuong);
+            row.getCell(11).value = parseFloat(item.dongia);
+            row.getCell(12).value = parseFloat(item.giaban);
         });
         if (orderDetails.thueGTGT === 0) {
             worksheet.getCell('A519').value = '1. Giá trên đã bao gồm thuế GTGT.';
