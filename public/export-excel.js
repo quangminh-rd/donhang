@@ -118,30 +118,30 @@ document.getElementById('export-excel').addEventListener('click', async function
             worksheet.getCell('H8').value = 'CSKH:';
             worksheet.getCell('J8').value = '1900 0282';
         }
-        worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(orderDetails.tongSobo) : 0;
-        worksheet.getCell('L512').value = orderDetails.cong ? parseFloat(orderDetails.cong) : 0;
-        worksheet.getCell('H513').value = orderDetails.mucChietkhau ? parseFloat(orderDetails.mucChietkhau) : 0;
-        worksheet.getCell('L513').value = orderDetails.giatriChietkhau ? parseFloat(orderDetails.giatriChietkhau) : 0;
-        worksheet.getCell('L514').value = orderDetails.phiVanchuyenlapdat ? parseFloat(orderDetails.phiVanchuyenlapdat) : 0;
-        worksheet.getCell('H515').value = orderDetails.mucthueGTGT ? parseFloat(orderDetails.mucthueGTGT) : 0;
-        worksheet.getCell('L515').value = orderDetails.thueGTGT ? parseFloat(orderDetails.thueGTGT) : 0;
-        worksheet.getCell('L516').value = orderDetails.tamUng ? parseFloat(orderDetails.tamUng) : 0;
-        worksheet.getCell('L517').value = orderDetails.sotienConthieu ? parseFloat(orderDetails.sotienConthieu) : 0;
+        worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(formatNumber(orderDetails.tongSobo)) : 0;
+        worksheet.getCell('L512').value = orderDetails.cong ? parseFloat(formatNumber(orderDetails.cong)) : 0;
+        worksheet.getCell('H513').value = orderDetails.mucChietkhau ? parseFloat(formatNumber(orderDetails.mucChietkhau)) : 0;
+        worksheet.getCell('L513').value = orderDetails.giatriChietkhau ? parseFloat(formatNumber(orderDetails.giatriChietkhau)) : 0;
+        worksheet.getCell('L514').value = orderDetails.phiVanchuyenlapdat ? parseFloat(formatNumber(orderDetails.phiVanchuyenlapdat)) : 0;
+        worksheet.getCell('H515').value = orderDetails.mucthueGTGT ? parseFloat(formatNumber(orderDetails.mucthueGTGT)) : 0;
+        worksheet.getCell('L515').value = orderDetails.thueGTGT ? parseFloat(formatNumber(orderDetails.thueGTGT)) : 0;
+        worksheet.getCell('L516').value = orderDetails.tamUng ? parseFloat(formatNumber(orderDetails.tamUng)) : 0;
+        worksheet.getCell('L517').value = orderDetails.sotienConthieu ? parseFloat(formatNumber(orderDetails.sotienConthieu)) : 0;
         worksheet.getCell('A518').value = `Bằng chữ: ${orderDetails.sotienBangchu || ''}`;
         // Điền chi tiết sản phẩm vào Excel
         let startRow = 12; // Ví dụ: bắt đầu từ dòng 12
         orderItems.forEach((item, index) => {
             const row = worksheet.getRow(startRow + index);
-            row.getCell(1).value = parseFloat(item.sttTrongdon);
+            row.getCell(1).value = parseFloat(formatNumber(item.sttTrongdon));
             row.getCell(2).value = item.vitriLapdat;
             row.getCell(3).value = item.maSanphamid;
             row.getCell(4).value = item.diengiai;
             row.getCell(5).value = parseFloat(formatNumber(item.chieuRong));
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
-            row.getCell(7).value = parseFloat(item.dienTich);
-            row.getCell(8).value = parseFloat(item.soLuong);
+            row.getCell(7).value = parseFloat(formatNumber(item.dienTich));
+            row.getCell(8).value = parseFloat(formatNumber(item.soLuong));
             row.getCell(9).value = item.dvt;
-            row.getCell(10).value = parseFloat(item.khoiLuong);
+            row.getCell(10).value = parseFloat(formatNumber(item.khoiLuong));
             row.getCell(11).value = parseFloat(formatNumber(item.dongia));
             row.getCell(12).value = parseFloat(formatNumber(item.giaban));
         });
