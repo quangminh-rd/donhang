@@ -119,7 +119,7 @@ document.getElementById('export-excel').addEventListener('click', async function
             worksheet.getCell('J8').value = '1900 0282';
         }
         worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(orderDetails.tongSobo) : 0;
-        worksheet.getCell('L512').value = orderDetails.cong ? parseFloat(orderDetails.cong) : 0;
+        worksheet.getCell('L512').value = orderDetails.cong ? orderDetails.cong : 0;
         worksheet.getCell('H513').value = orderDetails.mucChietkhau ? parseFloat(formatNumber(orderDetails.mucChietkhau)) : 0;
         worksheet.getCell('L513').value = orderDetails.giatriChietkhau ? parseFloat(formatNumber(orderDetails.giatriChietkhau)) : 0;
         worksheet.getCell('L514').value = orderDetails.phiVanchuyenlapdat ? parseFloat(formatNumber(orderDetails.phiVanchuyenlapdat)) : 0;
