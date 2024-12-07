@@ -140,12 +140,12 @@ function formatWithCommas(numberString) {
 
 const SPREADSHEET_ID_1 = '1_VjjzKwaUdjxsOPdLOGHzcc0b8oyQsj4_Duw_7xmmWo';
 const RANGE_1 = 'tong_hop_don_hang_24!A:AU';
-const RANGE_CHITIET_1 = 'tong_hop_don_hang_chi_tiet_24!C:Y';
+const RANGE_CHITIET_1 = 'tong_hop_don_hang_chi_tiet_24!C:Z';
 
 
 const SPREADSHEET_ID_2 = '1FLsjyTBi_JfkcDomkgq1ChLWUtrnKv-PfGpPJwt7Zek';
 const RANGE_2 = 'tong_hop_don_hang_25!A:AU';
-const RANGE_CHITIET_2 = 'tong_hop_don_hang_chi_tiet_25!C:Y';
+const RANGE_CHITIET_2 = 'tong_hop_don_hang_chi_tiet_25!C:Z';
 
 const API_KEY = 'AIzaSyA9g2qFUolpsu3_HVHOebdZb0NXnQgXlFM';
 
