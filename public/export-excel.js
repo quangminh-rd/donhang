@@ -132,18 +132,18 @@ document.getElementById('export-excel').addEventListener('click', async function
         let startRow = 12; // Ví dụ: bắt đầu từ dòng 12
         orderItems.forEach((item, index) => {
             const row = worksheet.getRow(startRow + index);
-            row.getCell(1).value = parseFloat(item.sttTrongdon);
+            row.getCell(1).value = item.sttTrongdon;
             row.getCell(2).value = item.vitriLapdat;
             row.getCell(3).value = item.maSanphamid;
             row.getCell(4).value = item.diengiai;
-            row.getCell(5).value = parseFloat(item.chieuRong);
-            row.getCell(6).value = parseFloat(item.chieuCao);
+            row.getCell(5).value = parseFloat(formatNumber(item.chieuRong));
+            row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
             row.getCell(7).value = item.dienTich;
-            row.getCell(8).value = parseFloat(item.soLuong);
+            row.getCell(8).value = item.soLuong;
             row.getCell(9).value = item.dvt;
-            row.getCell(10).value = parseFloat(item.khoiLuong);
-            row.getCell(11).value = parseFloat(item.dongia);
-            row.getCell(12).value = parseFloat(item.giaban);
+            row.getCell(10).value = item.khoiLuong;
+            row.getCell(11).value = formatNumber(item.dongia);
+            row.getCell(12).value = formatNumber(item.giaban);
         });
         if (orderDetails.thueGTGT === 0) {
             worksheet.getCell('A519').value = '1. Giá trên đã bao gồm thuế GTGT.';
