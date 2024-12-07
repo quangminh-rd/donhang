@@ -118,7 +118,7 @@ document.getElementById('export-excel').addEventListener('click', async function
             worksheet.getCell('H8').value = 'CSKH:';
             worksheet.getCell('J8').value = '1900 0282';
         }
-        worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(formatNumber(orderDetails.tongSobo)) : 0;
+        worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(orderDetails.tongSobo) : 0;
         worksheet.getCell('L512').value = orderDetails.cong ? parseFloat(formatNumber(orderDetails.cong)) : 0;
         worksheet.getCell('H513').value = orderDetails.mucChietkhau ? parseFloat(formatNumber(orderDetails.mucChietkhau)) : 0;
         worksheet.getCell('L513').value = orderDetails.giatriChietkhau ? parseFloat(formatNumber(orderDetails.giatriChietkhau)) : 0;
@@ -138,10 +138,10 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(4).value = item.diengiai;
             row.getCell(5).value = parseFloat(formatNumber(item.chieuRong));
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
-            row.getCell(7).value = parseFloat(formatNumber(item.dienTich));
+            row.getCell(7).value = parseFloat(formatWithCommas(item.dienTich));
             row.getCell(8).value = parseFloat(formatNumber(item.soLuong));
             row.getCell(9).value = item.dvt;
-            row.getCell(10).value = parseFloat(formatNumber(item.khoiLuong));
+            row.getCell(10).value = parseFloat(formatWithCommas(item.khoiLuong));
             row.getCell(11).value = parseFloat(formatNumber(item.dongia));
             row.getCell(12).value = parseFloat(formatNumber(item.giaban));
         });
