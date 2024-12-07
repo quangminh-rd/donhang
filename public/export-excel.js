@@ -118,15 +118,15 @@ document.getElementById('export-excel').addEventListener('click', async function
             worksheet.getCell('H8').value = 'CSKH:';
             worksheet.getCell('J8').value = '1900 0282';
         }
-
-
-        worksheet.getCell('H513').value = orderDetails.mucChietkhau || '';
-
+        worksheet.getCell('H512').value = orderDetails.tongSobo ? parseFloat(orderDetails.tongSobo) : 0;
+        worksheet.getCell('L512').value = orderDetails.cong ? parseFloat(orderDetails.cong) : 0;
+        worksheet.getCell('H513').value = orderDetails.mucChietkhau ? parseFloat(orderDetails.mucChietkhau) : 0;
+        worksheet.getCell('L513').value = orderDetails.giatriChietkhau ? parseFloat(orderDetails.giatriChietkhau) : 0;
         worksheet.getCell('L514').value = orderDetails.phiVanchuyenlapdat ? parseFloat(orderDetails.phiVanchuyenlapdat) : 0;
-        worksheet.getCell('H515').value = orderDetails.mucthueGTGT || '';
-
+        worksheet.getCell('H515').value = orderDetails.mucthueGTGT ? parseFloat(orderDetails.mucthueGTGT) : 0;
+        worksheet.getCell('L515').value = orderDetails.thueGTGT ? parseFloat(orderDetails.thueGTGT) : 0;
         worksheet.getCell('L516').value = orderDetails.tamUng ? parseFloat(orderDetails.tamUng) : 0;
-
+        worksheet.getCell('L517').value = orderDetails.sotienConthieu ? parseFloat(orderDetails.sotienConthieu) : 0;
         worksheet.getCell('A518').value = `Bằng chữ: ${orderDetails.sotienBangchu || ''}`;
         // Điền chi tiết sản phẩm vào Excel
         let startRow = 12; // Ví dụ: bắt đầu từ dòng 12
@@ -138,12 +138,12 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(4).value = item.diengiai;
             row.getCell(5).value = parseFloat(formatNumber(item.chieuRong));
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
-
+            row.getCell(7).value = parseFloat(item.dienTich);
             row.getCell(8).value = parseFloat(item.soLuong);
             row.getCell(9).value = item.dvt;
-
+            row.getCell(10).value = parseFloat(item.khoiLuong);
             row.getCell(11).value = parseFloat(formatNumber(item.dongia));
-
+            row.getCell(12).value = parseFloat(formatNumber(item.giaban));
         });
         if (orderDetails.thueGTGT === 0) {
             worksheet.getCell('A519').value = '1. Giá trên đã bao gồm thuế GTGT.';
