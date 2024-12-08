@@ -134,9 +134,9 @@ function formatNumber(numberString) {
 
 function formatWithCommas(numberString) {
     if (!numberString) return '';
-    // Loại bỏ dấu phân cách hàng nghìn (nếu có) và thay dấu phẩy thập phân bằng dấu chấm
+    // Bỏ dấu phân cách hàng nghìn và thay dấu phẩy thập phân bằng dấu chấm
     const num = numberString.replace(/\./g, '').replace(',', '.');
-    return parseFloat(num).toLocaleString('it-IT', { minimumFractionDigits: 3 });
+    return num; // Trả về chuỗi số có định dạng chuẩn
 }
 
 const SPREADSHEET_ID_1 = '1_VjjzKwaUdjxsOPdLOGHzcc0b8oyQsj4_Duw_7xmmWo';
