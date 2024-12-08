@@ -139,6 +139,7 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(5).value = parseFloat(formatNumber(item.chieuRong || '0')) || '';
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
             row.getCell(7).value = formatWithCommas(item.dienTich);
+            console.log(formatWithCommas(item.dienTich));
             row.getCell(8).value = parseFloat(formatNumber(item.soLuong));
             row.getCell(9).value = item.dvt;
             row.getCell(10).value = formatWithCommas(item.khoiLuong);
