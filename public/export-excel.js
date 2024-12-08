@@ -128,6 +128,14 @@ document.getElementById('export-excel').addEventListener('click', async function
         worksheet.getCell('L516').value = orderDetails.tamUng ? parseFloat(formatNumber(orderDetails.tamUng)) : 0;
         worksheet.getCell('L517').value = orderDetails.sotienConthieu ? parseFloat(formatNumber(orderDetails.sotienConthieu)) : 0;
         worksheet.getCell('A518').value = `Bằng chữ: ${orderDetails.sotienBangchu || ''}`;
+
+        function formatWithCommas(numberString) {
+            if (!numberString) return '';
+            // Bỏ dấu phân cách hàng nghìn và thay dấu phẩy thập phân bằng dấu chấm
+            const num = numberString.replace(/\./g, '').replace(',', '.');
+            return num; // Trả về chuỗi số có định dạng chuẩn
+        }
+
         // Điền chi tiết sản phẩm vào Excel
         let startRow = 12; // Ví dụ: bắt đầu từ dòng 12
         orderItems.forEach((item, index) => {
@@ -139,7 +147,6 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(5).value = parseFloat(formatNumber(item.chieuRong || '0')) || '';
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
             row.getCell(7).value = parseFloat(formatWithCommas(item.dienTich));
-            console.log(formatWithCommas(item.dienTich));
             row.getCell(8).value = parseFloat(formatNumber(item.soLuong));
             row.getCell(9).value = item.dvt;
             row.getCell(10).value = parseFloat(formatWithCommas(item.khoiLuong));

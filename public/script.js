@@ -132,13 +132,6 @@ function formatNumber(numberString) {
     return formatted.replace('.', ',');
 }
 
-function formatWithCommas(numberString) {
-    if (!numberString) return '';
-    // Bỏ dấu phân cách hàng nghìn và thay dấu phẩy thập phân bằng dấu chấm
-    const num = numberString.replace(/\./g, '').replace(',', '.');
-    return num; // Trả về chuỗi số có định dạng chuẩn
-}
-
 const SPREADSHEET_ID_1 = '1_VjjzKwaUdjxsOPdLOGHzcc0b8oyQsj4_Duw_7xmmWo';
 const RANGE_1 = 'tong_hop_don_hang_24!A:AU';
 const RANGE_CHITIET_1 = 'tong_hop_don_hang_chi_tiet_24!C:Z';
