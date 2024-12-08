@@ -138,11 +138,11 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(4).value = item.diengiai;
             row.getCell(5).value = parseFloat(formatNumber(item.chieuRong || '0')) || '';
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
-            row.getCell(7).value = formatWithCommas(item.dienTich);
+            row.getCell(7).value = parseFloat(formatWithCommas(item.dienTich));
             console.log(formatWithCommas(item.dienTich));
             row.getCell(8).value = parseFloat(formatNumber(item.soLuong));
             row.getCell(9).value = item.dvt;
-            row.getCell(10).value = formatWithCommas(item.khoiLuong);
+            row.getCell(10).value = parseFloat(formatWithCommas(item.khoiLuong));
             row.getCell(11).value = parseFloat(formatNumber(item.dongia));
             row.getCell(12).value = parseFloat(formatNumber(item.giaban));
         });
