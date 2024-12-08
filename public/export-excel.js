@@ -154,9 +154,9 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(12).value = parseFloat(formatNumber(item.giaban));
         });
         if (orderDetails.thueGTGT === 0) {
-            worksheet.getCell('A519').value = '1. Giá trên đã bao gồm thuế GTGT.';
-        } else {
             worksheet.getCell('A519').value = '1. Giá trên chưa bao gồm thuế GTGT.';
+        } else {
+            worksheet.getCell('A519').value = '1. Giá trên đã bao gồm thuế GTGT.';
         }
 
         // Điều kiện cho phí vận chuyển và phương thức bán
