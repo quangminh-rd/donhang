@@ -136,7 +136,7 @@ document.getElementById('export-excel').addEventListener('click', async function
             row.getCell(2).value = item.vitriLapdat;
             row.getCell(3).value = item.maSanphamid;
             row.getCell(4).value = item.diengiai;
-            row.getCell(5).value = parseFloat(formatNumber(item.chieuRong || ''));
+            row.getCell(5).value = parseFloat(formatNumber(item.chieuRong || '0')) || '';
             row.getCell(6).value = parseFloat(formatNumber(item.chieuCao));
             row.getCell(7).value = parseFloat(formatWithCommas(item.dienTich));
             row.getCell(8).value = parseFloat(formatNumber(item.soLuong));
